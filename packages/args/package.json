@@ -1,0 +1,46 @@
+{
+  "name": "@jsk-env/args",
+  "version": "0.0.1",
+  "description": "jsk koa server env as toml",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "build:force": "rimraf .tsbuildcache && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynnkoo/js-basic-kit.git"
+  },
+  "keywords": [
+    "jsk server env"
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lynnkoo/js-basic-kit/issues"
+  },
+  "homepage": "https://github.com/lynnkoo/js-basic-kit#readme",
+  "devDependencies": {
+    "tslib": "^2.3.0",
+    "typescript": "^3.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@jsk-env/server": "^0.0.1",
+    "@jsk-std/x": "^0.0.2",
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.4.12",
+    "lodash": "^4.17.21",
+    "toml": "^3.0.0"
+  },
+  "peerDependencies": {
+    "@types/lodash": "^4.14.172",
+    "lodash": "^4.17.21",
+    "toml": "^3.0.0"
+  }
+}
