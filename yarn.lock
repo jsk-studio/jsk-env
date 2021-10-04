@@ -1287,6 +1287,14 @@
     "@jsk-std/rc" "^0.0.3"
     "@jsk-std/x" "^0.0.1"
 
+"@jsk-std/io@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@jsk-std/io/-/io-0.0.8.tgz#d835ad4dd276b9233617d99591f95c0d3ac05e18"
+  integrity sha512-kainlACtahIDaJad6o6DHiQYdef6T1AwPpi1WGlmKAnOVrD8cuuAMG4849hfdAVDidRrrkNT8gwS0GJRFfqzOg==
+  dependencies:
+    "@jsk-std/rc" "^0.0.3"
+    "@jsk-std/x" "^0.0.1"
+
 "@jsk-std/rc@^0.0.3":
   version "0.0.3"
   resolved "https://registry.npmjs.org/@jsk-std/rc/-/rc-0.0.3.tgz#1984115591a49fdf713b0049e8bf4ae878d3dbd7"
@@ -1295,12 +1303,12 @@
     "@jsk-std/io" "^0.0.7"
     yargs "^17.2.1"
 
-"@jsk-std/rc@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npmjs.org/@jsk-std/rc/-/rc-0.0.4.tgz#e734ca191eb7f919387e51288eebd0dc9d9a1eb5"
-  integrity sha512-swcbtSkIRdCYlZN0Wqj3LpcuV4AuTKpL92DV5Vz+oRWpugEPxzfpvFKeHXAxlu8MVaFSYhvGgkuSY2k0UaDNLQ==
+"@jsk-std/rc@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmjs.org/@jsk-std/rc/-/rc-0.0.5.tgz#e1587edb9bfafdaeda317437bb032d3daeb75d7f"
+  integrity sha512-+WOx5D/zy21XqXstPk8zuv/8KkRdgGhAT/GelqEWMdztyQrYauZmyBQKvJIWDH8mS/x8baWVqUdRtu8VEJxGsQ==
   dependencies:
-    "@jsk-std/io" "^0.0.7"
+    "@jsk-std/io" "^0.0.8"
     yargs "^17.2.1"
 
 "@jsk-std/x@^0.0.1":

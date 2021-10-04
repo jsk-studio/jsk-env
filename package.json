@@ -2,7 +2,8 @@
   "name": "jsk",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "projects/*"
   ],
   "engines": {
     "node": ">=10.15.0",
@@ -10,7 +11,8 @@
   },
   "scripts": {
     "init": "yarn install && lerna bootstrap --use-workspaces && npm run build",
-    "sync": "jsk-rc sync-repo && lerna run --stream --sort sync",
+    "sync": "jsk-rc sync",
+    "sync:force": "jsk-rc sync --force",
     "build": "lerna run --stream --sort build",
     "pub": "lerna exec --parallel -- npm publish",
     "build:prod": "npm run clean:cache && npm run build",
@@ -23,7 +25,7 @@
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "@jsk-std/rc": "^0.0.4",
+    "@jsk-std/rc": "^0.0.5",
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
     "lerna": "^3.20.2",
