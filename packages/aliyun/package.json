@@ -1,6 +1,6 @@
 {
   "name": "@jsk-env/aliyun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -35,8 +35,8 @@
   "dependencies": {
     "@alicloud/fc2": "^2.2.2",
     "@alicloud/pop-core": "^1.7.10",
-    "@jsk-env/args": "^0.0.1",
-    "@jsk-env/server": "^0.0.1",
+    "@jsk-env/args": "^0.0.2",
+    "@jsk-env/server": "^0.0.2",
     "@jsk-std/io": "^0.0.4",
     "@jsk-std/x": "^0.0.2",
     "@types/ali-oss": "^6.0.8",

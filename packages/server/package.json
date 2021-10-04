@@ -1,6 +1,6 @@
 {
   "name": "@jsk-env/server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jsk koa server env as toml",
   "sideEffects": false,
   "main": "lib/index.js",
@@ -31,7 +31,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@jsk-env/args": "^0.0.1",
+    "@jsk-env/args": "^0.0.2",
     "@jsk-std/x": "^0.0.2",
     "@types/lodash": "^4.14.172",
     "@types/node": "^16.4.12",
