@@ -1,5 +1,5 @@
 {
-  "name": "jsk",
+  "name": "jsk-env",
   "private": true,
   "workspaces": [
     "packages/*",
@@ -12,26 +12,28 @@
   "scripts": {
     "init": "yarn install && lerna bootstrap --use-workspaces && npm run build",
     "sync": "jsk-rc sync",
-    "sync:force": "jsk-rc sync --force",
+    "sync:force": "jsk-rc sync --force && npm run sync:script",
+    "sync:script": "jsk-rc script build --set=\"tsc -p tsconfig.prod.json\"",
     "build": "lerna run --stream --sort build",
     "pub": "lerna exec --parallel -- npm publish",
     "build:prod": "npm run clean:cache && npm run build",
-    "build:pub": "npm run build:prod && lerna publish -y",
+    "build:pub": "npm run build:prod && lerna publish patch -y",
     "clean": "lerna clean -y && npm run clean:cache",
     "clean:cache": "lerna exec --parallel -- rimraf .tsbuildcache lib",
     "clean:init": "npm run clean && npm run init",
     "format": "npm run format:tslint",
     "format:tslint": "tslint --fix --config ./tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "jest --coverage"
+    "test": "npm run build && jest --coverage"
   },
   "devDependencies": {
     "@jsk-std/rc": "^0.0.5",
+    "@types/jest": "^27.0.2",
     "cross-env": "^7.0.2",
-    "jest": "^26.0.1",
+    "jest": "^27.2.4",
     "lerna": "^3.20.2",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "ts-jest": "^26.1.0",
+    "ts-jest": "^27.0.5",
     "tslint": "^6.1.2"
   }
 }

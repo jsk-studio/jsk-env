@@ -1,6 +1,6 @@
 {
-  "name": "@jsk-server/cli",
-  "version": "0.0.4",
+  "name": "@jsk-env/server-cli",
+  "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
   "bin": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "script": "node ./src/bin.js",
-    "test:build-koa": "JSK_ROOT_DIR=./mock/koa npm run script build"
+    "test:build-koa": "cross-env JSK_ROOT_DIR=./mock/koa npm run script build"
   },
   "publishConfig": {
     "access": "public"
@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "typescript": "^3.2.2"
   },
   "peerDependencies": {
@@ -37,11 +38,14 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@jsk-env/args": "^0.0.1",
     "@jsk-env/server": "^0.0.1",
+    "@jsk-std/rc": "^0.0.6",
     "@jsk-std/x": "^0.0.2",
     "@types/yargs": "^17.0.0",
     "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
     "webpack": "^5.42.1",
     "webpack-cli": "^3.3.12",
     "yargs": "^17.0.0-candidate.13"

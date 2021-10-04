@@ -1,5 +1,6 @@
-# @jsk-std/rc
+# [jsk-rc] stable configure
 src/
+spec/
 lib/**/*.map
 .gitattributes
 .gitignore

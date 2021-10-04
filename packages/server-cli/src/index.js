@@ -1,5 +1,5 @@
-const args = require('./utils/args')
+// const register = require('./register')
 
-module.exports = {
-    ...args
-}
+// module.exports = {
+//     register
+// }

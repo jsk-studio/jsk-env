@@ -1,13 +1,12 @@
 {
-  "name": "@jsk-aliyun/cli",
-  "version": "0.0.4",
+  "name": "@jsk-env/aliyun-cli",
+  "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
   "bin": {
     "jsk-aliyun": "./src/index.js"
   },
   "scripts": {
-    "build": "tsc",
     "test": "node ./src/index.js",
     "test:oss-push": "npm run test oss-push ./conf",
     "test:fc-build": "npm run test fc-build ./mock"
@@ -21,16 +20,17 @@
     "typescript": "^3.2.2"
   },
   "peerDependencies": {
-    "@jsk-aliyun/env": "^0.0.1",
-    "@jsk-server/cli": "0.0.4",
+    "@jsk-env/aliyun": "0.0.1",
+    "@jsk-env/server-cli": "^0.0.1",
     "@jsk-std/io": "^0.0.4",
     "compressing": "^1.5.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@jsk-aliyun/env": "^0.0.1",
-    "@jsk-server/cli": "0.0.4",
-    "@jsk-std/io": "^0.0.4",
+    "@jsk-env/aliyun": "0.0.1",
+    "@jsk-env/server-cli": "^0.0.1",
+    "@jsk-std/io": "^0.0.8",
+    "@jsk-std/rc": "^0.0.6",
     "compressing": "^1.5.1",
     "webpack-cli": "^3.3.12"
   }

@@ -1,5 +1,8 @@
-# @jsk-std/rc
+auth.toml
+auth.dev.toml
+# [jsk-rc] stable configure
 src/
+spec/
 lib/**/*.map
 .gitattributes
 .gitignore

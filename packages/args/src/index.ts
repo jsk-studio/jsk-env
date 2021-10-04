@@ -29,9 +29,7 @@ export function readTomlConfig<T = any>(resolvePath: string): Partial<T> {
     return res
 }
 
-export interface EnvConfigs {
-
-}
+export interface EnvConfigs {}
 
 export const configs: EnvConfigs = xSingleton(key => {
     return readTomlConfig(key)

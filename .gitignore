@@ -1,6 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# @jsk-std/rc
+auth.toml
+auth.dev.toml
+
+# [jsk-rc] stable configure
 
 # dependencies
 node_modules

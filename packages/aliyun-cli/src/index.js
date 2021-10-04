@@ -2,7 +2,7 @@
 const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path')
-const { args } = require('@jsk-server/cli')
+const { args } = require('@jsk-std/rc')
 const [cmd = '', ...options] = args
 
 const [service,command] = cmd.split('-')
