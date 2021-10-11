@@ -1,6 +1,6 @@
 {
   "name": "@jsk-env/aliyun-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "src/index.js",
   "bin": {
@@ -27,8 +27,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@jsk-env/aliyun": "^0.0.2",
-    "@jsk-env/server-cli": "^0.0.2",
+    "@jsk-env/aliyun": "^0.0.3",
+    "@jsk-env/server-cli": "^0.0.3",
     "@jsk-std/io": "^0.0.8",
     "@jsk-std/rc": "^0.0.6",
     "compressing": "^1.5.1",

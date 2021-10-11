@@ -1,6 +1,6 @@
 {
   "name": "@jsk-env/server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "jsk koa server env as toml",
   "sideEffects": false,
   "main": "lib/index.js",
