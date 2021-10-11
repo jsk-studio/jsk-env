@@ -4,7 +4,7 @@ import FC from '@alicloud/fc2'
 import { xSingleton } from '@jsk-std/x'
 import { aliyunConfigs } from "../config";
 import { authConfigs } from '@jsk-env/server';
-import Axios from 'axios'
+import Axios, { Method } from 'axios'
 // @ts-ignore
 import { argv } from '@jsk-std/rc'
 
@@ -21,9 +21,7 @@ export type IFCOptions = {
 export const fcClients = xSingleton(key => {
     const localSchemes = asLocalhosts()
     if (localSchemes?.[key]) {
-        return Axios.create({
-            baseURL: localSchemes?.[key]
-        })
+        return createFCLocalClient(localSchemes?.[key])
     }
     const { aliyun: auth } = authConfigs
     const { fc: mItem } = aliyunConfigs
@@ -55,6 +53,34 @@ type IFCClient = {
     put: <T = any>(path: string, body: any, opts?: IFCRequestOptions) => Promise<T>
     delete: <T = any>(path: string, params?: any, opts?: IFCRequestOptions) => Promise<T>
     request: <T = any>(method: string, path: string, opts?: IFCRequestOptions) => Promise<T>
+}
+
+function createFCLocalClient(target: string) {
+    const client = Axios.create({ baseURL: target })
+    const proxy = {} as IFCClient
+    const methods = ['get', 'post', 'put', 'delete'] as const
+    for (const key of methods) {
+        proxy[key] = async (url: string, data: any, opts = {} as IFCRequestOptions) => {
+            const { headers, params, body } = opts
+            // @ts-ignore
+            return await client[key](url, data, {
+                headers,
+                params,
+                data: body,
+            })
+        }
+    }
+    proxy['request'] = async (method: string, url: string, opts = {} as IFCRequestOptions) => {
+        const { headers, params, body, opts: fcOpts } = opts
+        return await client.request({
+            headers,
+            params,
+            url,
+            method: method as Method,
+            data: body,
+        })
+    }
+    return proxy
 }
 
 export function createFCClient(opts: IFCOptions) {
