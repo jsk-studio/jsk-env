@@ -4,6 +4,10 @@ import FC from '@alicloud/fc2'
 import { xSingleton } from '@jsk-std/x'
 import { aliyunConfigs } from "../config";
 import { authConfigs } from '@jsk-env/server';
+import Axios from 'axios'
+// @ts-ignore
+import { argv } from '@jsk-std/rc'
+
 
 export type IFCOptions = {
     accessKeyID: string,
@@ -15,6 +19,12 @@ export type IFCOptions = {
 }
 
 export const fcClients = xSingleton(key => {
+    const localSchemes = asLocalhosts()
+    if (localSchemes?.[key]) {
+        return Axios.create({
+            baseURL: localSchemes?.[key]
+        })
+    }
     const { aliyun: auth } = authConfigs
     const { fc: mItem } = aliyunConfigs
     const item = mItem?.[key]
@@ -84,4 +94,21 @@ export function revertRequestUrl(url: string) {
     const { fc } = aliyunConfigs
     const { functionName } = revertAliasrName(fc?.alias!)
     return url.replace(new RegExp(`/${fcVersion}/proxy(\/.*?\/)${functionName}`), '')
+}
+
+function asLocalhosts() {
+    if (!argv.local) {
+        return
+    }
+    // local=fc://acc:8090,fc://auth:9999
+    const rs = {} as any
+    const schemes = argv.local.split(',').map((s: string) => s.split(':'))
+    for (const scheme of schemes) {
+        const [prefix, name, port] = scheme
+        if (prefix !== 'fc') {
+            continue
+        }
+        rs[name] = `http://localhost:${port}`
+    }
+    return rs
 }

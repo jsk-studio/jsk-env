@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "bin": {
-    "jsk-server": "./src/bin.js"
+    "jsk-server": "./src/index.js"
   },
   "scripts": {
     "script": "node ./src/bin.js",

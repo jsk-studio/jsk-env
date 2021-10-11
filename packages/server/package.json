@@ -33,8 +33,10 @@
   "dependencies": {
     "@jsk-env/args": "^0.0.2",
     "@jsk-std/x": "^0.0.2",
+    "@types/axios": "^0.14.0",
     "@types/lodash": "^4.14.172",
     "@types/node": "^16.4.12",
+    "axios": "^0.22.0",
     "lodash": "^4.17.21",
     "toml": "^3.0.0"
   },
