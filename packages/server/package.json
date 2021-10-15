@@ -44,5 +44,6 @@
     "@types/lodash": "^4.14.172",
     "lodash": "^4.17.21",
     "toml": "^3.0.0"
-  }
+  },
+  "gitHead": "426fd49a03f3c7e3a7feb3b959b6efc790ccb46e"
 }

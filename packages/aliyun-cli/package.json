@@ -33,5 +33,6 @@
     "@jsk-std/rc": "^0.0.6",
     "compressing": "^1.5.1",
     "webpack-cli": "^3.3.12"
-  }
+  },
+  "gitHead": "426fd49a03f3c7e3a7feb3b959b6efc790ccb46e"
 }

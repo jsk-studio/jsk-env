@@ -23,9 +23,6 @@ export function readTomlConfig<T = any>(resolvePath: string): Partial<T> {
             merged = true
         }
     }
-    if (!merged) {
-        throw new Error('Can not read configs files: ' + rootPathStr + '---' + resolvePath)
-    }
     return res
 }
 

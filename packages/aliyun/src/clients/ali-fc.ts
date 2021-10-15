@@ -128,7 +128,7 @@ function asLocalhosts() {
     }
     // local=fc://acc:8090,fc://auth:9999
     const rs = {} as any
-    const schemes = argv.local.split(',').map((s: string) => s.split(':'))
+    const schemes = argv.local.split(',').map((s: string) => s.split(/:\/?\/?/i))
     for (const scheme of schemes) {
         const [prefix, name, port] = scheme
         if (prefix !== 'fc') {

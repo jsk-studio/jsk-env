@@ -26,7 +26,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "f12b8bd6d88f9f211723965110f37be5cb72617d",
+  "gitHead": "426fd49a03f3c7e3a7feb3b959b6efc790ccb46e",
   "peerDependencies": {
     "@jsk-env/server": "^0.0.1",
     "@jsk-std/io": "^0.0.3",
