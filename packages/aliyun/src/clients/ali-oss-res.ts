@@ -45,7 +45,14 @@ export function createOSSResClient(opts?: IOSSResOption) {
         const res = await client.put(target, fpath)
         console.log(`Upload Success: ${fpath} --> ${res.name}`)
         return { ...res, public_url: `${remotePath}/${res.name}` }
-    } 
+    }
+
+    async function putStream(stream: any, rpath: string) {
+        const target = path.join(pkg, rpath)
+        const res = await client.putStream(target, stream)
+        console.log(`Upload Success: stream --> ${res.name}`)
+        return { ...res, public_url: `${remotePath}/${res.name}` }
+    }
     
     async function putString(buf: Buffer | string, rpath: string) {
         const stream = new PassThrough()
@@ -91,6 +98,7 @@ export function createOSSResClient(opts?: IOSSResOption) {
         putFile,
         putString,
         putObject,
+        putStream,
     }
 }
 
